@@ -1,0 +1,25 @@
+{
+  "name": "smartcontext",
+  "version": "1.0.0",
+  "description": "Intelligent context engineering for AI assistants - memory, attention, and transparency",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "python src/smartcontext.py",
+    "test": "python -m pytest tests/",
+    "demo": "python examples/demo.py"
+  },
+  "keywords": [
+    "context-engineering",
+    "mcp",
+    "claude",
+    "ai-memory",
+    "attention-management",
+    "llm"
+  ],
+  "author": "jmartinmatias",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmartinmatias/smartcontext"
+  }
+}
