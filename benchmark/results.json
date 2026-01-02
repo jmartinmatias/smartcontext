@@ -1,0 +1,192 @@
+[
+  {
+    "scenario": "memory_recall",
+    "smartcontext": {
+      "scenario": "memory_recall",
+      "variant": "smartcontext",
+      "tokens_used": 68,
+      "tokens_available": 500,
+      "efficiency": 0.136,
+      "recall_accuracy": 0.3333333333333333,
+      "context_relevance": 0.3333333333333333,
+      "duration_ms": 0.4849433898925781,
+      "details": {
+        "context": "[GOAL]\nCurrent Goal: How does authentication work in this API?\n\n[MEMORIES]\nThe API uses JWT tokens for authentication with RS256 signing\nThe weather in Paris is nice - fact #0\nCoffee contains caffeine - fact #3\nMount Everest is the tallest mountain - fact #4\nThe weather in Paris is nice - fact #5\n",
+        "tokens_used": 68,
+        "duration_ms": 0.4849433898925781,
+        "memories_included": 5,
+        "mode": "exploring",
+        "quality_score": 45.44
+      }
+    },
+    "baseline": {
+      "scenario": "memory_recall",
+      "variant": "baseline",
+      "tokens_used": 500,
+      "tokens_available": 500,
+      "efficiency": 1.0,
+      "recall_accuracy": 0.0,
+      "context_relevance": 0.0,
+      "duration_ms": 0.0026226043701171875,
+      "details": {
+        "context": "=== MEMORIES ===\nThe weather in Paris is nice - fact #0\nPython was created by Guido van Rossum - fact #1\nThe Earth orbits the Sun - fact #2\nCoffee contains caffeine - fact #3\nMount Everest is the tallest mountain - fact #4\nThe weather in Paris is nice - fact #5\nPython was created by Guido van Rossum - fact #6\nThe Earth orbits the Sun - fact #7\nCoffee contains caffeine - fact #8\nMount Everest is the tallest mountain - fact #9\nThe weather in Paris is nice - fact #10\nPython was created by Guido van Rossum - fact #11\nThe Earth orbits the Sun - fact #12\nCoffee contains caffeine - fact #13\nMount Everest is the tallest mountain - fact #14\nThe weather in Paris is nice - fact #15\nPython was created by Guido van Rossum - fact #16\nThe Earth orbits the Sun - fact #17\nCoffee contains caffeine - fact #18\nMount Everest is the tallest mountain - fact #19\nThe weather in Paris is nice - fact #20\nPython was created by Guido van Rossum - fact #21\nThe Earth orbits the Sun - fact #22\nCoffee contains caffeine - fact #23\nMount Everest is the tallest mountain - fact #24\nThe weather in Paris is nice - fact #25\nPython was created by Guido van Rossum - fact #26\nThe Earth orbits the Sun - fact #27\nCoffee contains caffeine - fact #28\nMount Everest is the tallest mountain - fact #29\nThe weather in Paris is nice - fact #30\nPython was created by Guido van Rossum - fact #31\nThe Earth orbits the Sun - fact #32\nCoffee contains caffeine - fact #33\nMount Everest is the tallest mountain - fact #34\nThe weather in Paris is nice - fact #35\nPython was created by Guido van Rossum - fact #36\nThe Earth orbits the Sun - fact #37\nCoffee contains caffeine - fact #38\nMount Everest is the tallest mountain - fact #39\nThe weather in Paris is nice - fact #40\nPython was created by Guido van Rossum - fact #41\nThe Earth orbits the Sun - fact #42\nCoffee contains caffeine - fact #43\nMount Everest is the tallest mountain - fact #44\nThe weather in Paris is nice - fact #45\nPython was created by Guido van Rossum - fact #46\nThe \n... [TRUNCATED]",
+        "tokens_used": 500,
+        "duration_ms": 0.0026226043701171875,
+        "memories_included": 53,
+        "truncated": true
+      }
+    },
+    "improvements": {
+      "tokens": 0,
+      "recall": 3333.333333333333,
+      "relevance": 3333.333333333333
+    }
+  },
+  {
+    "scenario": "token_efficiency",
+    "smartcontext": {
+      "scenario": "token_efficiency",
+      "variant": "smartcontext",
+      "tokens_used": 119,
+      "tokens_available": 800,
+      "efficiency": 0.4621848739495799,
+      "recall_accuracy": 1.0,
+      "context_relevance": 0.55,
+      "duration_ms": 0.18262863159179688,
+      "details": {
+        "context": "[GOAL]\nCurrent Goal: There's a bug in the rate limiting - it's not resetting properly\n\n[OBSERVATIONS]\nMoving on to login functionality\nImplemented JWT token generation\nAdded refresh token support\nCreated middleware for auth validation\nDebugging an issue with token expiration\nFixed: was using seconds instead of milliseconds\nAdding rate limiting to auth endpoints\nImplemented with Redis for distributed rate limiting\nWriting integration tests\nAll auth features complete and tested\n\n[ARTIFACTS]\n#5b56ce5e: user_service.py\n",
+        "tokens_used": 119,
+        "duration_ms": 0.18262863159179688,
+        "memories_included": 0,
+        "mode": "debugging",
+        "quality_score": 50.95
+      }
+    },
+    "baseline": {
+      "scenario": "token_efficiency",
+      "variant": "baseline",
+      "tokens_used": 800,
+      "tokens_available": 800,
+      "efficiency": 0.0875,
+      "recall_accuracy": 1.0,
+      "context_relevance": 0.7,
+      "duration_ms": 0.0030994415283203125,
+      "details": {
+        "context": "=== SESSION ===\nLet's start building the user registration feature\nFirst, I'll create the User model with email and password fields\nAdded validation for email format using regex\nImplemented password hashing with bcrypt\nCreated the registration endpoint at POST /users\nAdded error handling for duplicate emails\nWriting tests for the registration flow\nTest failed: password validation not working\nFixed: was checking length before hashing\nAll tests passing now\nMoving on to login functionality\nImplemented JWT token generation\nAdded refresh token support\nCreated middleware for auth validation\nDebugging an issue with token expiration\nFixed: was using seconds instead of milliseconds\nAdding rate limiting to auth endpoints\nImplemented with Redis for distributed rate limiting\nWriting integration tests\nAll auth features complete and tested\n=== ARTIFACTS ===\n--- user_service.py ---\n\nclass UserService:\n    def __init__(self, db, hasher, jwt_service):\n        self.db = db\n        self.hasher = hasher\n        self.jwt = jwt_service\n\n    def register(self, email: str, password: str) -> User:\n        if self.db.get_user_by_email(email):\n            raise DuplicateEmailError()\n\n        hashed = self.hasher.hash(password)\n        user = User(email=email, password_hash=hashed)\n        return self.db.save(user)\n\n    def login(self, email: str, password: str) -> TokenPair:\n        user = self.db.get_user_by_email(email)\n        if not user or not self.hasher.verify(password, user.password_hash):\n            raise InvalidCredentialsError()\n\n        access_token = self.jwt.create_access_token(user.id)\n        refresh_token = self.jwt.create_refresh_token(user.id)\n        return TokenPair(access_token, refresh_token)\n\n    def refresh(self, refresh_token: str) -> TokenPair:\n        payload = self.jwt.verify_refresh_token(refresh_token)\n        user_id = payload['user_id']\n        return TokenPair(\n            self.jwt.create_access_token(user_id),\n            self.jwt.create_refresh_token(user_id)\n        )\n\nclass UserService:\n    def __init__(self, db, hasher, jwt_service):\n        self.db = db\n        self.hasher = hasher\n        self.jwt = jwt_service\n\n    def register(self, email: str, password: str) -> User:\n        if self.db.get_user_by_email(email):\n            raise DuplicateEmailError()\n\n        hashed = self.hasher.hash(password)\n        user = User(email=email, password_hash=hashed)\n        return self.db.save(user)\n\n    def login(self, email: str, password: str) -> TokenPair:\n        user = self.db.get_user_by_email(email)\n        if not user or not self.hasher.verify(password, user.password_hash):\n            raise InvalidCredentialsError()\n\n        access_token = self.jwt.create_access_token(user.id)\n        refresh_token = self.jwt.create_refresh_token(user.id)\n        return TokenPair(access_token, refresh_token)\n\n    def refresh(self, refresh_token: str) -> TokenPair:\n        payload = self.jwt.verify_refresh_token(refresh_token)\n        user_id = payload['user_id']\n        return TokenPair(\n            self.jwt.create_access_token(user_id),\n            self.jwt.create_refresh_token(user_id)\n        )\n\nclass UserService:\n    def __init__(self, db, hashe\n... [TRUNCATED]",
+        "tokens_used": 800,
+        "duration_ms": 0.0030994415283203125,
+        "memories_included": 0,
+        "truncated": true
+      }
+    },
+    "improvements": {
+      "tokens": 85.125,
+      "recall": 0,
+      "relevance": -21.428571428571416
+    }
+  },
+  {
+    "scenario": "mode_detection",
+    "smartcontext": {
+      "scenario": "mode_detection",
+      "variant": "smartcontext",
+      "tokens_used": 400,
+      "tokens_available": 400,
+      "efficiency": 1.0,
+      "recall_accuracy": 0.8333333333333334,
+      "context_relevance": 0.8333333333333334,
+      "duration_ms": 0,
+      "details": {
+        "mode_accuracy": 0.8333333333333334
+      }
+    },
+    "baseline": {
+      "scenario": "mode_detection",
+      "variant": "baseline",
+      "tokens_used": 400,
+      "tokens_available": 400,
+      "efficiency": 1.0,
+      "recall_accuracy": 0.5,
+      "context_relevance": 0.5,
+      "duration_ms": 0,
+      "details": {
+        "mode_accuracy": 0.5
+      }
+    },
+    "improvements": {
+      "tokens": 0,
+      "recall": 66.66666666666667,
+      "relevance": 66.66666666666667
+    }
+  },
+  {
+    "scenario": "long_session",
+    "smartcontext": {
+      "scenario": "long_session",
+      "variant": "smartcontext",
+      "tokens_used": 600,
+      "tokens_available": 600,
+      "efficiency": 1.0,
+      "recall_accuracy": 1.0,
+      "context_relevance": 1.0,
+      "duration_ms": 0,
+      "details": {
+        "quality_over_time": [
+          [
+            25,
+            1.0
+          ],
+          [
+            50,
+            1.0
+          ],
+          [
+            75,
+            1.0
+          ],
+          [
+            99,
+            1.0
+          ]
+        ],
+        "degradation": 0.0
+      }
+    },
+    "baseline": {
+      "scenario": "long_session",
+      "variant": "baseline",
+      "tokens_used": 600,
+      "tokens_available": 600,
+      "efficiency": 1.0,
+      "recall_accuracy": 1.0,
+      "context_relevance": 1.0,
+      "duration_ms": 0,
+      "details": {
+        "quality_over_time": [
+          [
+            25,
+            1.0
+          ],
+          [
+            50,
+            1.0
+          ],
+          [
+            75,
+            1.0
+          ],
+          [
+            99,
+            1.0
+          ]
+        ],
+        "degradation": 0.0
+      }
+    },
+    "improvements": {
+      "tokens": 0,
+      "recall": 0.0,
+      "relevance": 0.0
+    }
+  }
+]

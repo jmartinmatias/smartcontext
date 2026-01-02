@@ -69,7 +69,13 @@ class Memory:
 
     @classmethod
     def from_dict(cls, data: dict) -> "Memory":
-        return cls(**data)
+        # Handle field name mapping from storage
+        if 'created_at' in data and 'created' not in data:
+            data['created'] = data.pop('created_at')
+        # Remove any extra fields not in the dataclass
+        valid_fields = {'id', 'content', 'tags', 'created', 'importance', 'source'}
+        filtered = {k: v for k, v in data.items() if k in valid_fields}
+        return cls(**filtered)
 
 
 @dataclass
