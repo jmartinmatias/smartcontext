@@ -1,0 +1,147 @@
+[
+  {
+    "smartcontext": {
+      "scenario": "debugging_session",
+      "variant": "smartcontext",
+      "metrics": {
+        "dead_end_awareness": 0.0,
+        "solution_present": 1.0,
+        "mode_correct": 1.0,
+        "tokens_used": 153
+      },
+      "details": {
+        "error_count": 3,
+        "mode": "debugging"
+      },
+      "duration_ms": 1.4421939849853516
+    },
+    "baseline": {
+      "scenario": "debugging_session",
+      "variant": "baseline",
+      "metrics": {
+        "dead_end_awareness": 0.0,
+        "solution_present": 1.0,
+        "mode_correct": 0.0,
+        "tokens_used": 186
+      },
+      "details": {
+        "error_count": 0
+      },
+      "duration_ms": 0.003814697265625
+    }
+  },
+  {
+    "smartcontext": {
+      "scenario": "large_codebase",
+      "variant": "smartcontext",
+      "metrics": {
+        "relevant_found": 0.4,
+        "tokens_used": 129,
+        "efficiency": 0.31007751937984496
+      },
+      "details": {
+        "total_files": 20,
+        "relevant_files": [
+          "auth_service.py",
+          "user_model.py",
+          "middleware.py",
+          "validators.py",
+          "api_routes.py"
+        ]
+      },
+      "duration_ms": 10.438919067382812
+    },
+    "baseline": {
+      "scenario": "large_codebase",
+      "variant": "baseline",
+      "metrics": {
+        "relevant_found": 0.4,
+        "tokens_used": 2009,
+        "efficiency": 0.01991040318566451
+      },
+      "details": {
+        "truncated": true
+      },
+      "duration_ms": 0.007867813110351562
+    }
+  },
+  {
+    "smartcontext": {
+      "scenario": "error_learning",
+      "variant": "smartcontext",
+      "metrics": {
+        "lessons_accessible": 1.0,
+        "strategy_version": 6,
+        "has_patterns": 1.0
+      },
+      "details": {
+        "total_errors": 5
+      },
+      "duration_ms": 0.3960132598876953
+    },
+    "baseline": {
+      "scenario": "error_learning",
+      "variant": "baseline",
+      "metrics": {
+        "lessons_accessible": 0.0,
+        "strategy_version": 0,
+        "has_patterns": 0.0
+      },
+      "details": {},
+      "duration_ms": 0.0011920928955078125
+    }
+  },
+  {
+    "smartcontext": {
+      "scenario": "constraint_adherence",
+      "variant": "smartcontext",
+      "metrics": {
+        "constraints_present": 1.0
+      },
+      "details": {
+        "total_constraints": 5
+      },
+      "duration_ms": 0.6270408630371094
+    },
+    "baseline": {
+      "scenario": "constraint_adherence",
+      "variant": "baseline",
+      "metrics": {
+        "constraints_present": 0.0
+      },
+      "details": {},
+      "duration_ms": 0.0
+    }
+  },
+  {
+    "smartcontext": {
+      "scenario": "compaction_quality",
+      "variant": "smartcontext",
+      "metrics": {
+        "retention": 1.0,
+        "compression_ratio": 0.155
+      },
+      "details": {
+        "success": true,
+        "original_size": 200,
+        "compacted_size": 31,
+        "compression_ratio": "15.50%",
+        "insights_extracted": 0,
+        "insights": []
+      },
+      "duration_ms": 2.158641815185547
+    },
+    "baseline": {
+      "scenario": "compaction_quality",
+      "variant": "baseline",
+      "metrics": {
+        "retention": 0.25,
+        "compression_ratio": 0.25
+      },
+      "details": {
+        "method": "truncation"
+      },
+      "duration_ms": 0.027894973754882812
+    }
+  }
+]
