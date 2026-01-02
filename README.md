@@ -378,11 +378,12 @@ results = memory.search("rate limits")
 - Meta In-Context Pretraining: Ordering and adjacency matter
 - Attention Sinks research: First tokens get disproportionate attention
 
-### Distilled From
-Code distilled and enhanced from [mcp-tools-servers](https://github.com/yourusername/mcp-tools-servers):
-- `mcp_server_memory_agent.py` - Tiered memory, attention policies, transparency modes
-- `mcp_server_context_compiler.py` - Attention budget allocation, semantic chunking, temporal decay, context graphs
-- `mcp_server_agentic_memory.py` - WorkingContext, schema-driven compaction, strategy evolution, insight extraction
+### Core Patterns
+- Tiered memory architecture (working/session/long-term/artifacts)
+- Attention budget allocation with adaptive resolution
+- Semantic chunking and temporal decay weighting
+- Schema-driven compaction for reversible summarization
+- Strategy evolution for learning from execution
 
 ## License
 
